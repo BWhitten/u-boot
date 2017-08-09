@@ -203,4 +203,12 @@ void at91_pmc_init(void)
 	tmp = AT91_PMC_MCKR_MDIV_4 | AT91_PMC_MCKR_CSS_PLLA;
 	at91_mck_init(tmp);
 }
+
+#ifdef CONFIG_SPL_LOAD_FIT
+int board_fit_config_name_match(const char *name)
+{
+	return 0;
+}
+#endif
+
 #endif
